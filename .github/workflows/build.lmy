@@ -1,0 +1,21 @@
+name: publish to web
+
+on: workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@master
+        - name: clone GitaPower
+          run: git clone https://github.com/sudeeprp/GitaPower.git
+        - name: build to web
+          run: |
+            cd GitaPower
+            
+
+
+change to that directory
+build output to this directory
+flutter build web --release --web-renderer html --dart-define=Dart2jsOptimization=O4 --output c:\Users\sudee\source\gita-discover --base-href=/gita-discover/
