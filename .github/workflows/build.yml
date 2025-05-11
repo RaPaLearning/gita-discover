@@ -24,7 +24,7 @@ jobs:
           run: |
             cd GitaPower/feeder
             flutter pub get
-            flutter build web --release --web-renderer html --optimization-level=4 \
+            flutter build web --release --optimization-level=4 \
               --output ../.. --base-href=/gita-discover/
 
         - name: cleanup
