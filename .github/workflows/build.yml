@@ -8,6 +8,10 @@ jobs:
 
         steps:
         - uses: actions/checkout@master
+        - name: setup flutter
+          uses: subosito/flutter-action@v2
+        - run: flutter --version
+
         - name: start clean
           run: |
             rm -rf assets/ canvaskit/ icons/ .last_build_id favicon.png flutter.js \
@@ -19,6 +23,7 @@ jobs:
         - name: build to web
           run: |
             cd GitaPower/feeder
+            flutter pub get
             flutter build web --release --web-renderer html --optimization-level=4 \
               --output ../.. --base-href=/gita-discover/
 
